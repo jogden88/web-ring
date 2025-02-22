@@ -65,3 +65,15 @@ updateURL(webring/self, id, newUrl) {
 
 ## Insert Website
 I'm not a fan of this feature in this context but the order in which members are set is arbitrary and an insert function will facilitate more complex reording should such behavior be desired.
+
+## Usage Pattern
+A single file containing the addition of each website in the web-ring to the linked list. A person would open a PR adding their website to the end of the list in an `addWebsite()` call. This file would be processed, thereby creating the web-ring data structure, which then needs output into a json lookup table where a user calling the client side JS library for the web-ring retrieves the links for the neighboring websites.
+
+### Web-ring JSON Output
+
+```
+{
+  "slug": { prevURL: "butts.com", nextURL: "nerd.com" },
+  ...
+}
+```
